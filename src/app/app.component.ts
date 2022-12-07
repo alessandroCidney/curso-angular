@@ -3,27 +3,14 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
 @Component({
   selector: 'app-root',
   template: `
-    {{ valor }}
-    <button (click)="adicionar()">Adicionar</button>
-    
-    <app-title *ngIf="renderizar" title="Título"></app-title>
-    <button (click)="destruirTitulo()">Destruir título</button>
+    <app-model *ngIf="false"></app-model>
+
+    <app-data-binding></app-data-binding>
 
     <router-outlet></router-outlet>
   `
 })
-export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
-  public valor:number = 1
-  public renderizar:boolean = true
-
-  public adicionar ():number {
-    return this.valor += 1
-  }
-
-  public destruirTitulo (): void {
-    this.renderizar = false
-  }
-  
+export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {  
   constructor () {
     console.log('constructor')
   }

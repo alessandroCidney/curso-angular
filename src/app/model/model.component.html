@@ -1,0 +1,11 @@
+{{ valor }}
+<button (click)="adicionar()">Adicionar</button>
+
+<br>
+
+<app-title *ngIf="renderizar" [title]="model"></app-title>
+<button (click)="destruirTitulo()">Destruir título</button>
+
+<br>
+
+<input [(ngModel)]="model" type="text" placeholder="Digite algo" />
