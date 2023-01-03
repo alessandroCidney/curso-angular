@@ -3,9 +3,13 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
 @Component({
   selector: 'app-root',
   template: `
-    <app-model *ngIf="false"></app-model>
+    <!-- 
+      <app-model *ngIf="false"></app-model>
 
-    <app-data-binding></app-data-binding>
+      <app-data-binding></app-data-binding>
+    -->
+
+    <app-diretivas-estruturais></app-diretivas-estruturais>
 
     <router-outlet></router-outlet>
   `

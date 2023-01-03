@@ -1,0 +1,13 @@
+<p *ngIf="condition; else elseContainer">Teste</p>
+
+<ng-template #elseContainer>
+  <p>Segundo teste</p>
+</ng-template>
+
+<hr>
+
+<p *ngIf="conditionClick">Teste do click (ativo)</p>
+<p *ngIf="!conditionClick">Teste do click (desativado)</p>
+
+<button (click)="onClick()">Inverter</button>
+<button (click)="conditionClick = !conditionClick">Inverter (simples)</button>
