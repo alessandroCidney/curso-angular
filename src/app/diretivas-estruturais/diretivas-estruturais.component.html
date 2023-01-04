@@ -15,8 +15,10 @@
 <hr>
 
 <ul>
-  <li *ngFor="let item of list; let i = index" (click)="onClickEventList(i)">
+  <li *ngFor="let item of list; index as i; first as isFirst; last as isLast" (click)="onClickEventList(i)">
     [ {{ i }} ] - Nome: {{ item.nome }} - Idade: {{ item.idade }}
+    <span *ngIf="isFirst">(Primeiro item)</span>
+    <span *ngIf="isLast">(Último item)</span>
   </li>
 </ul>
 

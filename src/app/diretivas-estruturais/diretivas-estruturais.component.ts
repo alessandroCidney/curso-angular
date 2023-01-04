@@ -13,6 +13,9 @@ export class DiretivasEstruturaisComponent implements OnInit {
   public list: { nome: string, idade: number }[] = [
     { nome: 'Felipe', idade: 25 },
     { nome: 'Ana', idade: 20 },
+    { nome: 'Paulo', idade: 30 },
+    { nome: 'Joana', idade: 40 },
+    { nome: 'Eduarda', idade: 26 },
   ]
   
   ngOnInit(): void {
