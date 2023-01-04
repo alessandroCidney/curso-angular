@@ -11,3 +11,13 @@
 
 <button (click)="onClick()">Inverter</button>
 <button (click)="conditionClick = !conditionClick">Inverter (simples)</button>
+
+<hr>
+
+<ul>
+  <li *ngFor="let item of list; let i = index" (click)="onClickEventList(i)">
+    [ {{ i }} ] - Nome: {{ item.nome }} - Idade: {{ item.idade }}
+  </li>
+</ul>
+
+<button (click)="onClickAddList()">Adicionar</button>
