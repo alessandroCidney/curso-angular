@@ -1,7 +1,31 @@
 <h1>Aulas de diretivas de atributos</h1>
 
-<h2>ngClass</h2>
+<div *ngIf="!disableDivsCheckbox">
+  <h2>ngClass</h2>
 
-<p [ngClass]="{ 'active': valor, 'disabled': !valor }">
-  Teste
-</p>
+  <p [ngClass]="{ 'active': valor, 'disabled': !valor }">
+    Teste
+  </p>
+  
+  <h2>ngStyle</h2>
+  
+  <div [ngStyle]="{ height: '50px' }">
+    <p [ngStyle]="{ 'height': altura, 'border': '1px solid black' }">
+      Teste
+    </p>
+  </div>
+</div>
+
+<h2>ngModel</h2>
+
+<input [(ngModel)]="model1" />
+<div>{{ model1 }}</div>
+
+<button (click)="saveModel1()">Salvar</button>
+
+<ul>
+  <li *ngFor="let item of model1List">{{ item['name'] }}</li>
+</ul>
+
+<label for="disableDivsCheckbox">Desabilitar divs superiores</label>
+<input [(ngModel)]="disableDivsCheckbox" type="checkbox" id="disableDivsCheckbox" name="disableDivsCheckbox" />
