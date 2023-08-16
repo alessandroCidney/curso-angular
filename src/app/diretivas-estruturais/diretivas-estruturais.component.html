@@ -1,3 +1,6 @@
+<h1>Diretivas estruturais</h1>
+<h2>Aulas de condições com ngIf</h2>
+
 <p *ngIf="condition; else elseContainer">Teste</p>
 
 <ng-template #elseContainer>
@@ -14,6 +17,8 @@
 
 <hr>
 
+<h2>Aulas de loops com ngFor</h2>
+
 <ul>
   <li *ngFor="let item of list; index as i; first as isFirst; last as isLast" (click)="onClickEventList(i)">
     [ {{ i }} ] - Nome: {{ item.nome }} - Idade: {{ item.idade }}
@@ -23,3 +28,79 @@
 </ul>
 
 <button (click)="onClickAddList()">Adicionar</button>
+
+<h2>Testando várias condições If seguidas</h2>
+
+<div>
+  Testando elif
+  <input [(ngModel)]="elifCondition" type='text' placeholder='Escolha uma valor para a condição Elif' />
+
+  <div *ngIf='elifCondition === "1"; else elifTestSecondContainer'>
+    Este é o valor 1
+  </div>
+
+  <ng-template #elifTestSecondContainer>
+    <div *ngIf='elifCondition === "2"; else elifTestThirdContainer'>
+      Este é o valor 2
+    </div>
+  </ng-template>
+
+  <ng-template #elifTestThirdContainer>
+    <div *ngIf='elifCondition === "3"; else elifTestFourthContainer'>
+      Este é o valor 3
+    </div>
+  </ng-template>
+
+  <ng-template #elifTestFourthContainer>
+    <div>
+      Este é o valor padrão
+    </div>
+  </ng-template>
+
+  <p>
+    Parece que também é possível usar [ngIf] e [ngIfElse].
+    Parece que o ng-template é obrigatório nesse segundo modo de criar a condição.
+  </p>
+
+  <ng-template [ngIf]='elifCondition === "1"' [ngIfElse]='elifTestSecondContainer'>
+    <div>
+      Este é o valor 1
+    </div>
+  </ng-template>
+
+  <ng-template #elifTestSecondContainer>
+    <div [ngIf]='elifCondition === "2"' [ngIfElse]='elifTestThirdContainer'>
+      Este é o valor 2
+    </div>
+  </ng-template>
+
+  <ng-template #elifTestThirdContainer>
+    <div [ngIf]='elifCondition === "3"' [ngIfElse]='elifTestFourthContainer'>
+      Este é o valor 3
+    </div>
+  </ng-template>
+
+  <ng-template #elifTestFourthContainer>
+    <div>
+      Este é o valor padrão
+    </div>
+  </ng-template>
+</div>
+
+<h2>Aulas de condições com ngSwitch</h2>
+
+<input [(ngModel)]="switchCondition" type='text' placeholder='Escolha uma valor para a condição Switch' />
+
+<div [ngSwitch]="switchCondition">
+  <p *ngSwitchCase="'name1'">
+    Este é o primeiro nome
+  </p>
+
+  <p *ngSwitchCase="'name2'">
+    Este é o segundo nome
+  </p>
+
+  <p *ngSwitchDefault>
+    Este é o valor padrão
+  </p>
+</div>

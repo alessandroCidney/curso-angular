@@ -10,6 +10,9 @@ export class DiretivasEstruturaisComponent implements OnInit {
   public condition: boolean = true
   public conditionClick: boolean = true
 
+  public switchCondition: string = 'name1'
+  public elifCondition: string = '1'
+
   public list: { nome: string, idade: number }[] = [
     { nome: 'Felipe', idade: 25 },
     { nome: 'Ana', idade: 20 },
