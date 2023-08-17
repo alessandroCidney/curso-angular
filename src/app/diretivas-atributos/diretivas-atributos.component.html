@@ -1,3 +1,5 @@
+<ng-content select='h1'></ng-content>
+
 <h1>Aulas de diretivas de atributos</h1>
 
 <div *ngIf="!disableDivsCheckbox">
@@ -41,3 +43,5 @@
 <ng-template ngFor let-item [ngForOf]='model1List'>
   <p>{{ item['name'] }}</p>
 </ng-template>
+
+<ng-content select='h3'></ng-content>
