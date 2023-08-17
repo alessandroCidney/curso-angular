@@ -11,7 +11,7 @@ export class DiretivasAtributosComponent implements OnInit {
 
   public model1: string = ''
 
-  public model1List: Record<string, string>[] = []
+  public model1List: Record<string, string>[] = [{ name: 'Teste 01' }]
 
   public disableDivsCheckbox: boolean = false
 

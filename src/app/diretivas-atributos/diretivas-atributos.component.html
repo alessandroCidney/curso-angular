@@ -18,7 +18,7 @@
 
 <h2>ngModel</h2>
 
-<input [(ngModel)]="model1" />
+<input [(ngModel)]="model1" placeholder='Este input adiciona coisas à lista model1List' />
 <div>{{ model1 }}</div>
 
 <button (click)="saveModel1()">Salvar</button>
@@ -29,3 +29,15 @@
 
 <label for="disableDivsCheckbox">Desabilitar divs superiores</label>
 <input [(ngModel)]="disableDivsCheckbox" type="checkbox" id="disableDivsCheckbox" name="disableDivsCheckbox" />
+
+<h2>Aula sobre ng-template</h2>
+
+<ng-template [ngIf]='true'>
+  <p>O ng-template não aparece se estiver sem nenhuma configuração (se estiver só com as tags, sem um "ngIf", "ngFor" ou algo parecido.</p>
+</ng-template>
+
+<p>O ngFor precisa ser escrito de forma um pouco diferente para funcionar diretamente no ng-template</p>
+
+<ng-template ngFor let-item [ngForOf]='model1List'>
+  <p>{{ item['name'] }}</p>
+</ng-template>
