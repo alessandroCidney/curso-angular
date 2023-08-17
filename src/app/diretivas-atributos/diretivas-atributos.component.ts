@@ -13,6 +13,8 @@ export class DiretivasAtributosComponent implements OnInit {
 
   public model1List: Record<string, string>[] = [{ name: 'Teste 01' }]
 
+  public date: Date = new Date()
+
   public disableDivsCheckbox: boolean = false
 
   ngOnInit(): void {

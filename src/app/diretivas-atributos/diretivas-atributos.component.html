@@ -1,3 +1,4 @@
+<!--
 <ng-content select='h1'></ng-content>
 
 <h1>Aulas de diretivas de atributos</h1>
@@ -45,3 +46,22 @@
 </ng-template>
 
 <ng-content select='h3'></ng-content>
+-->
+
+
+
+
+<h2>Aula sobre pipes</h2>
+
+<p>Os pipes vem depois do símbolo "|"</p>
+<p>Funcionam mais ou menos como os filters do Vue.js, porém já vem com alguns pré prontos.</p>
+
+<input [(ngModel)]="model1" placeholder='Este input adiciona coisas à lista model1List' />
+<div>{{ model1 }}</div>
+
+<ul>
+  <li *ngFor="let item of model1List">{{ item['name'] | uppercase }}</li>
+</ul>
+
+<p>{{ date }}</p>
+<p>{{ date | date: 'dd/MM/yyyy' }}</p>
