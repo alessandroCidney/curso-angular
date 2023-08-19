@@ -32,10 +32,25 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
 
     <app-new-component></app-new-component>
 
+    <app-input [contador]="addValue"></app-input>
+    <br />
+    <button (click)="add()">Add</button>
+
+    <ng-template [ngIf]="getDados">
+      <h1>{{ getDados.nome }}</h1>
+      <h2>{{ getDados.idade }}</h2>
+    </ng-template>
+
+    <app-output (enviarDados)="setDados($event)"></app-output>
+
     <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {  
+  public addValue: number = 0
+
+  public getDados: { nome: string, idade: number } | undefined
+  
   constructor () {
     console.log('constructor')
   }
@@ -62,5 +77,13 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   ngAfterViewChecked(): void {
     console.log('view checked')
+  }
+
+  public add () {
+    this.addValue++
+  }
+
+  public setDados (event: { nome: string, idade: number }) {
+    this.getDados = event
   }
 }
