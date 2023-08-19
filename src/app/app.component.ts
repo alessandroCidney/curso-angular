@@ -30,6 +30,8 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
       <h3>Inserindo um h3 via ng-content</h3>
     </app-diretivas-atributos>
 
+    <app-new-component></app-new-component>
+
     <router-outlet></router-outlet>
   `
 })
