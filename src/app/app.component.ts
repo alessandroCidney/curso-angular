@@ -25,23 +25,27 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
       </app-diretivas-atributos>
     -->
 
-    <app-diretivas-atributos>
-      <h1>Aulas de Diretivas Atributo</h1>
-      <h3>Inserindo um h3 via ng-content</h3>
-    </app-diretivas-atributos>
+    <!--
+      <app-diretivas-atributos>
+        <h1>Aulas de Diretivas Atributo</h1>
+        <h3>Inserindo um h3 via ng-content</h3>
+      </app-diretivas-atributos>
 
-    <app-new-component></app-new-component>
+      <app-new-component></app-new-component>
 
-    <app-input [contador]="addValue"></app-input>
-    <br />
-    <button (click)="add()">Add</button>
+      <app-input [contador]="addValue"></app-input>
+      <br />
+      <button (click)="add()">Add</button>
 
-    <ng-template [ngIf]="getDados">
-      <h1>{{ getDados.nome }}</h1>
-      <h2>{{ getDados.idade }}</h2>
-    </ng-template>
+      <ng-template [ngIf]="getDados">
+        <h1>{{ getDados.nome }}</h1>
+        <h2>{{ getDados.idade }}</h2>
+      </ng-template>
 
-    <app-output (enviarDados)="setDados($event)"></app-output>
+      <app-output (enviarDados)="setDados($event)"></app-output>
+    -->
+
+    <app-food-list></app-food-list>
 
     <router-outlet></router-outlet>
   `
