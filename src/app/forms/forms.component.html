@@ -1,10 +1,24 @@
 <form #form="ngForm">
+  <div>Formulário válido: {{ form.valid }}</div>
+  <br><br>
+
   <label>
     Nome:
-    <input type="text" name="nome" ngModel />
+    <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required />
+
+    <span *ngIf="!nome.valid && nome.dirty && nome.touched">
+      Invalid
+    </span>
   </label>
 
   <br><br>
+
+  <!--
+    {{ nome.valid }}
+    {{ nome.invalid }}
+    {{ nome.dirty }}
+    {{ nome.touched }}
+  -->
     
   <label>
     Masculino:
